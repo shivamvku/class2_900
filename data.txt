@@ -1,0 +1,234 @@
+\\# Regular Expression
+# =================
+
+# it is a special patter or an expression wich is used
+# to extrat,search,find,replae the data from a 
+# colltion of string
+
+
+# How the expression ??
+
+# -----------------------
+
+# r'\d\c' --------- > sample regular expression
+
+# re ------- > re module to perform the regular expression function
+
+# This module exports the following functions:
+# =====================================================
+# match     Match a regular expression pattern to the beginning of a string.
+# fullmatch Match a regular expression pattern to all of a string.
+# search    Search a string for the presence of a pattern.
+# sub       Substitute occurrences of a pattern found in a string.
+# subn      Same as sub, but also return the number of substitutions made.
+# split     Split a string by the occurrences of a pattern.
+# findall   Find all occurrences of a pattern in a string.
+# finditer  Return an iterator yielding a match object for each match.
+# compile   Compile a pattern into a RegexObject.
+# purge     Clear the regular expression cache.
+# escape    Backslash all non-alphanumerics in a string.
+
+
+
+# Used to search the charchteres
+# -----------------------------------------------------------------------------------
+# .       - Any Character Except New Line
+# \d      - Digit (0-9)
+# \D      - Not a Digit (0-9)
+# \w      - Word Character (a-z, A-Z, 0-9, _)
+# \W      - Not a Word Character
+# \s      - Whitespace (space, tab, newline)
+
+# # r'^\d\d$'
+# --------------------------------------------------------------------------------
+# Boundary and anchors
+# ------------------------------------------------------------
+# \ ------ > search single charchtere
+# \b      - Word Boundary
+# \B      - Not a Word Boundary
+# ^       - Beginning of a String
+# $       - End of a String
+
+# shivam.vku@gmail.com
+
+
+# [\w\.\w\]@[\w\.\w]
+
+# ------------------------------------------------------------------
+# search gropu of charchteres
+# ---__________________________________________________
+# []      - Matches Characters in brackets
+# [^]    - Matches Characters NOT in brackets
+
+# {3}     - Exact Number
+# {3,4}   - Range of Numbers (Minimum, Maximum)
+# range of charchteres
+# -----------------------------------------
+# ( )     - Group
+
+# Quantifiers:
+# =======================================================
+# *       - 0 or More
+# +       - 1 or More------------------> exends
+
+
+
+data  = ''' 
+~!@#$%^&*()_+
+1234567890-qwertyuiopasdfghjklzxcvbnm,
+[;/\]'	asd
+
+
+Dave Martin
+615-555-7164
+173 Main St., Springfield RI 55924
+davemartin@bogusemail.com
+
+Charles Harris
+800-555-5669
+969 High St., Atlantis VA 34075
+charlesharris@bogusemail.com
+
+Eric Williams
+560-555-5153
+806 1st St., Faketown AK 86847
+laurawilliams@bogusemail.com
+
+Corey Jefferson
+900-555-9340
+826 Elm St., Epicburg NE 10671
+coreyjefferson@bogusemail.com
+
+Jennifer Martin-White
+714-555-7405
+212 Cedar St., Sunnydale CT 74983
+jenniferwhite@bogusemail.com
+
+Erick Davis
+800-555-6771
+519 Washington St., Olympus TN 32425
+tomdavis@bogusemail.com
+
+Neil Patterson
+783-555-4799
+625 Oak St., Dawnstar IL 61914
+neilpatterson@bogusemail.com
+
+Laura Jefferson
+516-555-4615
+890 Main St., Pythonville LA 29947
+laurajefferson@bogusemail.com
+
+Maria Johnson
+127-555-1867
+884 High St., Braavos‎ ME 43597
+mariajohnson@bogusemail.com
+
+Michael Arnold
+608-555-4938
+249 Elm St., Quahog OR 90938
+michaelarnold@bogusemail.com
+
+Michael Smith
+568-555-6051
+619 Park St., Winterfell VA 99000
+michaelsmith@bogusemail.com
+
+Erik Stuart
+292-555-1875
+220 Cedar St., Lakeview NY 87282
+robertstuart@bogusemail.com
+
+Laura Martin
+900-555-3205
+391 High St., Smalltown WY 28362
+lauramartin@bogusemail.com
+
+Barbara Martin
+614-555-1166
+121 Hill St., Braavos‎ UT 92474
+barbaramartin@bogusemail.com
+
+Linda Jackson
+530-555-2676
+433 Elm St., Westworld TX 61967
+lindajackson@bogusemail.com
+
+Eric Miller
+470-555-2750
+838 Main St., Balmora MT 56526
+stevemiller@bogusemail.com
+
+Dave Arnold
+800-555-6089
+732 High St., Valyria KY 97152
+davearnold@bogusemail.com
+
+Jennifer Jacobs
+880-555-8319
+217 High St., Old-town IA 82767
+jenniferjacobs@bogusemail.com
+
+Neil Wilson
+777-555-8378
+191 Main St., Mordor IL 72160
+neilwilson@bogusemail.com
+
+Kurt Jackson
+998-555-7385
+607 Washington St., Blackwater NH 97183
+kurtjackson@bogusemail.com
+
+Mary Jacobs
+800-555-7100
+478 Oak St., Bedrock IA 58176
+maryjacobs@bogusemail.com
+
+Michael White
+903-555-8277
+906 Elm St., Mordor TX 89212
+michaelwhite@bogusemail.com
+
+Jennifer Jenkins
+196-555-5674
+949 Main St., Smalltown SC 96962
+jenniferjenkins@bogusemail.com
+
+Sam Wright
+900-555-5118
+835 Pearl St., Smalltown ND 77737
+samwright@bogusemail.com
+
+John Davis
+905-555-1630
+451 Lake St., Bedrock GA 34615
+johndavis@bogusemail.com
+
+Eric Davis
+203-555-3475
+419 Lake St., Balmora OR 30826
+neildavis@bogusemail.com
+
+Laura Jackson
+884-555-8444
+443 Maple St., Quahog MS 29348
+laurajackson@bogusemail.com
+
+John Williams
+904-555-8559
+756 Hill St., Valyria KY 94854
+johnwilliams@bogusemail.com
+
+Michael Martin
+889*555*7393
+216 High St., Olympu
+s NV 21888
+michaelmartin@bogusemail.com
+
+Maggie Brown
+195-555-2405
+806 Lake St., Lakeview MD 59348
+maggiebrown@bogusemail.com 
+
+'''
+
